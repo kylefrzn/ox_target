@@ -9,11 +9,13 @@ window.addEventListener("message", (event) => {
     case "visible": {
       optionsWrapper.innerHTML = "";
       body.style.visibility = event.data.state ? "visible" : "hidden";
+      eye.classList.toggle("eye-blink", event.data.state);
       return eye.classList.remove("eye-hover");
     }
 
     case "leftTarget": {
       optionsWrapper.innerHTML = "";
+      eye.classList.remove("eye-blink");
       return eye.classList.remove("eye-hover");
     }
 
